@@ -3,13 +3,13 @@ version: '3'
 services:
   db:
     image: postgres:13
-    container_name: default_rails_app_db
+    container_name: stazirovochka_db
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
   web:
     build: .
-    image: default_rails_app/web:latest
-    container_name: default_rails_app_web
+    image: stazirovochka/web:latest
+    container_name: stazirovochka_web
     command: bash -c "/app/scripts/run_puma.sh"
     depends_on:
       - db
