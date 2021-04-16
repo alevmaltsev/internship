@@ -1,6 +1,6 @@
-.header
+%header.header
   = link_to '/', class: 'logo navbar-brand' do
-    = image_tag 'svg/logo.svg'
+    = image_tag 'svg/logo.svg', alt: 'Стажировочка'
   %nav.navbar.navbar-light.navbar-expand-lg.navbar-light 
     %button.navbar-toggler.align-self-start{"aria-controls" => "navbarToggleExternalContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarToggleExternalContent", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
@@ -11,5 +11,63 @@
         =link_to 'Компании', '/', class: 'nav-link'
       %li.nav-item
         =link_to 'Обучение',  '/',class: 'nav-link'
-  .container
+
+%main.container
+  .internship-wrrapper
+    .internship-card
+      %h3.title MediaSoft
+      .row-label-value
+        .label Специальность
+        .value Бэкенд-разработка
+      .row-label-value
+        .label Длительнось
+        .value 3–4 месяца
+      .row-label-value
+        .label Дата выхода
+        .value 11 мая
+      .row-label-value
+        .label Занятость
+        .value 20–30 часов в неделю
+      %button.btn.btn-primary
+        Подать заявку
+      %button.btn.btn-outline-primary
+        Подробнее
     
+    .internship-card
+      %h3.title MediaSoft
+      .row-label-value
+        .label Специальность
+        .value Бэкенд-разработка
+      .row-label-value
+        .label Длительнось
+        .value 3–4 месяца
+      .row-label-value
+        .label Дата выхода
+        .value 11 мая
+      .row-label-value
+        .label Занятость
+        .value 20–30 часов в неделю
+      %button.btn.btn-primary
+        Подать заявку
+      %button.btn.btn-outline-primary
+        Подробнее
+    
+    .internship-card
+      %h3.title MediaSoft
+      .row-label-value
+        .label Специальность
+        .value Бэкенд-разработка
+      .row-label-value
+        .label Длительнось
+        .value 3–4 месяца
+      .row-label-value
+        .label Дата выхода
+        .value 11 мая
+      .row-label-value
+        .label Занятость
+        .value 20–30 часов в неделю
+      %button.btn.btn-primary
+        Подать заявку
+      %button.btn.btn-outline-primary
+        Подробнее
+
