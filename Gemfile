@@ -19,7 +19,6 @@ gem 'hamlit'
 gem 'russian'
 gem 'state_machines-activerecord'
 gem 'validates'
-gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'font_awesome5_rails'
@@ -27,8 +26,6 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 
 gem 'image_processing', '~> 1.2'
@@ -46,8 +43,6 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
-  gem 'web-console', '>= 4.1.0'
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
