@@ -6,7 +6,7 @@ ruby '2.7.3'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rails'
 gem 'pg', '~> 1.1'
-gem 'puma'
+gem 'puma', '4.3.7'
 gem 'mini_racer', platforms: :ruby
 
 gem 'bcrypt'

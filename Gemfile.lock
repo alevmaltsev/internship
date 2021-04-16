@@ -297,7 +297,7 @@ DEPENDENCIES
   listen (~> 3.3)
   mini_racer
   pg (~> 1.1)
-  puma
+  puma (= 4.3.7)
   rack-mini-profiler (~> 2.0)
   rails
   russian
