@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Админка
+    %meta{name: :viewport, content: "width=device-width,initial-scale=1"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    %link{href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap", rel: "stylesheet"}/
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
+  %body
+    %header
+      %nav.navbar.navbar-dark.navbar-expand-md.bg-dark.fixed-top
+        = link_to "Стажировочка", admin_root_path, class: 'navbar-brand'
+      .collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.navbar-item
+            = active_link_to "Студенты", admin_students_path, class: 'nav-link'
+    .container-fluid.page-wrapper
+      = yield
