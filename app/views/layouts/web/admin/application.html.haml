@@ -15,6 +15,8 @@
         %ul.navbar-nav.mr-auto
           %li.navbar-item
             = active_link_to "Студенты", admin_students_path, class: 'nav-link'
+          %li.navbar-item
+            = active_link_to "Университеты", admin_universities_path, class: 'nav-link'
     %br
     .container-fluid.page-wrapper
       = yield

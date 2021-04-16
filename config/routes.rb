@@ -8,8 +8,8 @@ Rails.application.routes.draw do
       root to: 'students#index'
 
       resources :students, only: [:index, :new, :create, :edit, :update, :destroy]
-      resources :companies
-      resources :universities
+      resources :companies, only: [:index, :new, :create, :edit, :update, :destroy]
+      resources :universities, only: [:index, :new, :create, :edit, :update, :destroy]
     end
   end
 end
