@@ -19,6 +19,7 @@ gem 'hamlit'
 gem 'russian'
 gem 'state_machines-activerecord'
 gem 'validates'
+gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'font_awesome5_rails'
