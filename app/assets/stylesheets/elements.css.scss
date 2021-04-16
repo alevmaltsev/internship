@@ -1,5 +1,22 @@
 .header {
   display: flex;
   justify-content: space-between;
+  margin: 0 24px;
+
+  .logo {
+    display: flex;
+    font-size: 32px;
+    color: var(--main);
+  }
+  .navbar {
+    .nav-link {
+      color: var(--main);
+    }
+  }
+}
+
+.container {
+  max-width: 1104px;
+  margin: 0 auto;
 }
 

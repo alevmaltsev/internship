@@ -1,4 +1,15 @@
 .header
-  = link_to '/' do
-    %span Стажиров
-    %span очка
+  = link_to '/', class: 'logo navbar-brand' do
+    = image_tag 'svg/logo.svg'
+  %nav.navbar.navbar-light.navbar-expand-lg.navbar-light 
+    %button.navbar-toggler.align-self-start{"aria-controls" => "navbarToggleExternalContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarToggleExternalContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    %ul.navbar-nav.navbar-collapse.d-lg-block#navbarToggleExternalContent.collapse
+      %li.nav-item
+        =link_to 'Стажировки', '/', class: 'nav-link'
+      %li.nav-item
+        =link_to 'Компании', '/', class: 'nav-link'
+      %li.nav-item
+        =link_to 'Обучение',  '/',class: 'nav-link'
+  .container
+    
