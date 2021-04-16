@@ -9,12 +9,12 @@
     = stylesheet_link_tag 'application'
     = javascript_pack_tag 'application'
   %body
-    %header
-      %nav.navbar.navbar-dark.navbar-expand-md.bg-dark.fixed-top
-        = link_to "Стажировочка", admin_root_path, class: 'navbar-brand'
-      .collapse.navbar-collapse
+    %nav.navbar.navbar-dark.navbar-expand-md.bg-dark
+      = link_to "Админка", admin_root_path, class: 'navbar-brand'
+      #navbar.collapse.navbar-collapse
         %ul.navbar-nav.mr-auto
           %li.navbar-item
             = active_link_to "Студенты", admin_students_path, class: 'nav-link'
+    %br
     .container-fluid.page-wrapper
       = yield

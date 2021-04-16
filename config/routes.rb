@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root to: 'students#index'
 
-      resources :students
+      resources :students, only: [:index, :new, :create, :edit, :update, :destroy]
       resources :companies
       resources :universities
     end

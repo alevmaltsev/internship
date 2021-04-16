@@ -1,0 +1,34 @@
+ru:
+  attributes:
+    id: Id
+    meta_title: Meta-заголовок
+    meta_description: Meta-описание
+    meta_keywords: Ключевые слова
+    h1_title: H1-заголовок
+    name: Название
+    description: Описание
+    short_description: Краткое описание
+    slug: Slug
+    phone: Телефон
+    email: E-mail
+    password: Пароль
+    password_confirmation: Повтор пароля
+    state: Состояние
+    created_at: Дата и время создания
+    updated_at: Дата и время обновления
+
+  activerecord:
+    errors:
+      models:
+        student:
+          attributes:
+            university:
+              required: не может быть пустым
+            email:
+              email: имеет некорректный формат
+    attributes:
+      student:
+        university: Университет
+        last_name: Имя
+        first_name: Фамилия
+        middle_name: Отчество
