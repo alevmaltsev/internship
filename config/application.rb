@@ -21,18 +21,23 @@ Bundler.require(*Rails.groups)
 
 module DreamInternship
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.autoload_paths << Rails.root.join('lib')
+    config.eager_load_paths << Rails.root.join('lib')
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.action_controller.permit_all_parameters = true
+
+    config.time_zone = 'Moscow'
+    config.i18n.default_locale = :ru
+
+    config.exceptions_app = routes
+
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework :test_unit, fixture: false
+      g.fixture_replacement :factory_bot
+    end
   end
 end

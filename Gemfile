@@ -4,12 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.3'
 
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'rails'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
+gem 'puma'
 gem 'mini_racer', platforms: :ruby
 
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 gem 'active_link_to'
 gem 'configus'
 gem 'draper'
@@ -41,7 +41,7 @@ end
 
 group :development do
   gem 'capistrano', require: false
-  gem 'capistrano3-puma', require: false
+  gem 'capistrano3-puma', '4.0.0', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
