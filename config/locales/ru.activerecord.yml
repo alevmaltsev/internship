@@ -26,6 +26,14 @@ ru:
               required: не может быть пустым
             email:
               email: имеет некорректный формат
+        company:
+          attributes:
+            email:
+              email: имеет некорректный формат
+        university:
+          attributes:
+            email:
+              email: имеет некорректный формат
     attributes:
       student:
         university: Университет

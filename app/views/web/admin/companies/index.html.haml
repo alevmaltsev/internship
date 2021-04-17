@@ -1,0 +1,22 @@
+%p= link_to 'Добавить компанию', [:new, :admin, :company], class: "btn btn-info"
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th #
+      %th Название
+      %th Описание
+      %th E-mail
+      %th
+  %tbody
+    - @universities.each do |company|
+      %tr
+        %td= company.id
+        %td= company.name
+        %td= company.description
+        %td= company.email
+        %td
+          = link_to [:edit, :admin, company], class: 'btn btn-warning', title: t(:edit) do
+            = fa_icon "edit"
+          = link_to [:admin, company], data: { method: :delete, confirm: "Вы уверены, что хотите продолжить?" }, class: 'btn btn-danger' do
+            = fa_icon "recycle"
