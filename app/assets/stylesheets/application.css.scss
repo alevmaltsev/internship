@@ -87,24 +87,17 @@ h3 {
 .nav-item {
 
   &.icon {
-    & + .icon {
-      margin-left: 40px;
-    }
+    margin-left: 40px;
   }
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 0 24px;
+  align-items: center;
+  padding: 5px 24px;
   margin-bottom: 10px;
   background-color: #fff;
-
-  .logo {
-    display: flex;
-    font-size: 32px;
-    color: var(--main);
-  }
   .navbar {
     .nav-link {
       color: var(--main);
@@ -176,6 +169,12 @@ h3 {
       font-weight: 400;
       line-height: 28px;
       color: #000;
+    }
+  }
+
+  .btn {
+    & + .btn {
+      margin-left: 12px;
     }
   }
 }
