@@ -1,4 +1,8 @@
 class Web::Student::ProfilesController < Web::Student::ApplicationController
+  def index
+    @student = current_student
+  end
+
   def edit
     @student = current_student
   end

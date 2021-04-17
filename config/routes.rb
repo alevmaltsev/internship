@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     end
 
     namespace :student do
-      root to: 'profiles#edit'
+      root to: 'profiles#index'
 
-      resource :profile, only: [:edit, :update]
+      resource :profile, only: [:index, :edit, :update]
       resource :session, only: [:new, :create, :destroy]
     end
   end

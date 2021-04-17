@@ -1,0 +1,20 @@
+%main.container
+  .breadcrumbs
+    %ul
+      %li
+        =link_to 'Профиль', '/student'
+  .student-profile-header
+    .student-profile-header_avatar
+      .avatar-holder
+        =image_tag 'svg/profile/avatar_placeholder.svg'
+      %button.add_avatar
+        =image_tag 'svg/profile/plus.svg'
+    .student-profile-header_info
+      .name
+        = @student.first_name + ' ' + @student.last_name
+      .description
+        = @student.university.name
+      = link_to edit_student_profile_path, class: 'edit-link' do 
+        %span Скилл-сет
+        %span
+          =image_tag 'svg/link_arrow.svg'    
