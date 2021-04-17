@@ -34,9 +34,18 @@ ru:
           attributes:
             email:
               email: имеет некорректный формат
+        intership:
+          attributes:
+            company:
+              required: не может быть пустым
     attributes:
       student:
         university: Университет
         last_name: Имя
         first_name: Фамилия
         middle_name: Отчество
+      intership:
+        company: Компания
+        start_at: Дата начала
+        duration: Продолжительность
+        busyness: Занятость

@@ -1,0 +1,28 @@
+%p= link_to 'Добавить стажировку', [:new, :admin, :intership], class: "btn btn-info"
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th #
+      %th Компания
+      %th Название
+      %th Дата старта
+      %th Продолжительность
+      %th Занятость
+      %th
+  %tbody
+    - @interships.each do |intership|
+      %tr
+        %td= intership.id
+        %td= intership.company.name
+        %td= intership.name
+        %td
+          - if intership.start_at.present?
+            = l intership.start_at, format: :default
+        %td= intership.duration
+        %td= intership.busyness
+        %td
+          = link_to [:edit, :admin, intership], class: 'btn btn-warning', title: t(:edit) do
+            = fa_icon "edit"
+          = link_to [:admin, intership], data: { method: :delete, confirm: "Вы уверены, что хотите продолжить?" }, class: 'btn btn-danger' do
+            = fa_icon "recycle"

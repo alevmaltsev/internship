@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :students, only: [:index, :new, :create, :edit, :update, :destroy]
       resources :companies, only: [:index, :new, :create, :edit, :update, :destroy]
       resources :universities, only: [:index, :new, :create, :edit, :update, :destroy]
+      resources :interships, only: [:index, :new, :create, :edit, :update, :destroy]
     end
 
     namespace :student do
