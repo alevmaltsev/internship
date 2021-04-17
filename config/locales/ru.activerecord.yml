@@ -46,6 +46,7 @@ ru:
         middle_name: Отчество
       intership:
         company: Компания
+        company_specialty: Специальность
         start_at: Дата начала
         duration: Продолжительность
         busyness: Занятость

@@ -5,6 +5,7 @@
     %tr
       %th #
       %th Компания
+      %th Специальность
       %th Название
       %th Дата старта
       %th Продолжительность
@@ -15,6 +16,7 @@
       %tr
         %td= intership.id
         %td= intership.company.name
+        %td= intership&.company_specialty&.name
         %td= intership.name
         %td
           - if intership.start_at.present?
