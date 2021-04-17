@@ -13,13 +13,41 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+  font-family:'Graphik LCG';
+  src: asset-url('GraphikLCG-Medium.eot');
+  src: asset-url('GraphikLCG-Medium.woff2') format('woff2'),
+  asset-url('GraphikLCG-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
 
+@font-face {
+  font-family:'Graphik LCG';
+  src: asset-url('GraphikLCG-Regular.eot');
+  src: asset-url('GraphikLCG-Regular.woff2') format('woff2'),
+  asset-url('GraphikLCG-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
  // boostrap-vars
-$primary:       #722ED1;
+ 
 $border-radius: 0;
 $border-width: 2px;
-// $secondary:     $gray-600 !default;
-// $success:       $green !default;
+$input-btn-padding-y:         .75rem !default;
+$input-btn-padding-x:         1.5rem !default;
+$badge-padding-y:              .8em !default;
+$badge-padding-x:              .8em !default;
+$badge-font-size: 12px;
+$badge-font-weight: normal;
+$font-family-sans-serif:   'Graphik LCG',   system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$primary:       #722ED1;
+$secondary:     #F4F4F5;
+$success:       #52C41A;
 // $info:          $cyan !default;
 // $warning:       $yellow !default;
 // $danger:        $red !default;
@@ -29,10 +57,10 @@ $border-width: 2px;
 @import 'bootstrap';
 @import 'font_awesome5_webfont';
 
-
 body {
   padding: 0;
-  font-size: 1.4rem;
+  font-size: 14px;
+  background-color: #FBF9FE;
 }
 
 h1 {
@@ -54,5 +82,104 @@ h3 {
 }
 
 
+// ======================== Elements
 
-@import './elements.css.scss';
+.nav-item {
+
+  &.icon {
+    & + .icon {
+      margin-left: 40px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin-bottom: 10px;
+  background-color: #fff;
+
+  .logo {
+    display: flex;
+    font-size: 32px;
+    color: var(--main);
+  }
+  .navbar {
+    .nav-link {
+      color: var(--main);
+    }
+  }
+}
+
+.container {
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+.internship-filters {
+  display: flex;
+  justify-content: flex-end;
+  margin: 17px 0;
+
+  .btn {
+    display: inline-flex;
+    justify-content: space-between;
+    min-width: 300px;
+    
+    & +.btn {
+     margin-left: 16px;
+   }
+  }
+}
+
+.internship-wrrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.internship-card {
+  max-width: calc((100% - 2 * 16px) / 3);
+  width: 100%;
+  padding: 24px;
+  background-color: #fff;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 34px;
+  }
+
+  .row-label-value {
+    display: flex;
+    flex-direction: column;
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+    & + .row-label-value {
+      margin-top: 16px;
+    }
+    .label {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+      color: #828282;
+    }
+    .value {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #000;
+    }
+  }
+}
+
+
+
+
