@@ -1,6 +1,6 @@
 class Web::Admin::SkillsController < Web::Admin::ApplicationController
   def index
-    @skills = Skill.order(created_at: :desc)
+    @skills = Skill.order(:name)
   end
 
   def new

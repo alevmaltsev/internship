@@ -1,0 +1,8 @@
+= simple_form_for [:admin, @specialty], html: { class: 'form-horizontal' } do |f|
+  %legend= legend
+  = f.association :company, collection: Company.order(:name)
+  = f.input :name
+  = f.input :description
+  .form-actions
+    = f.submit class: "btn btn-primary"
+    = link_to t(:cancel), [:admin, :company_specialties], class: "btn"

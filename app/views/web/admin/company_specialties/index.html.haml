@@ -1,0 +1,22 @@
+%p= link_to 'Добавить специальность', [:new, :admin, :company_specialty], class: "btn btn-info"
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th #
+      %th Компания
+      %th Название
+      %th Описание
+      %th
+  %tbody
+    - @specialties.each do |specialty|
+      %tr
+        %td= specialty.id
+        %td= specialty.company.name
+        %td= specialty.name
+        %td= specialty.description
+        %td
+          = link_to [:edit, :admin, specialty], class: 'btn btn-warning', title: t(:edit) do
+            = fa_icon "edit"
+          = link_to [:admin, specialty], data: { method: :delete, confirm: "Вы уверены, что хотите продолжить?" }, class: 'btn btn-danger' do
+            = fa_icon "recycle"

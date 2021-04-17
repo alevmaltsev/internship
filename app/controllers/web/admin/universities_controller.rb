@@ -1,6 +1,6 @@
 class Web::Admin::UniversitiesController < Web::Admin::ApplicationController
   def index
-    @universities = University.order(created_at: :desc)
+    @universities = University.order(:name)
   end
 
   def new
