@@ -1,0 +1,18 @@
+%p= link_to 'Добавить навык', [:new, :admin, :skill], class: "btn btn-info"
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th #
+      %th Название
+      %th
+  %tbody
+    - @skills.each do |skill|
+      %tr
+        %td= skill.id
+        %td= skill.name
+        %td
+          = link_to [:edit, :admin, skill], class: 'btn btn-warning', title: t(:edit) do
+            = fa_icon "edit"
+          = link_to [:admin, skill], data: { method: :delete, confirm: "Вы уверены, что хотите продолжить?" }, class: 'btn btn-danger' do
+            = fa_icon "recycle"
