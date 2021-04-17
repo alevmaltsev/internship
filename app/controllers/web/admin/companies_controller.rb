@@ -25,7 +25,7 @@ class Web::Admin::CompaniesController < Web::Admin::ApplicationController
     @company = Company.find(params[:id])
 
     if @company.update(params[:company])
-      redirect_to admin_companies_path
+      redirect_to action: :index
     else
       render action: :edit
     end
