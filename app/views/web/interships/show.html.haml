@@ -2,3 +2,30 @@
   %h1= @intership.company.name
   %h2= @intership.name
   %h2= @intership.description
+
+  %br
+  %br
+  %h1 Список студентов, записанных на стажировку
+  %table.table
+    %thead
+      %th Имя
+      %th Фамилия
+      %th Отчество
+      %th Университет
+      %th Скиллы
+    %tbody
+      - Student.find_each do |student|
+        %tr{class: ('table-success' if current_student == student)}
+          %td= student.first_name
+          %td= student.last_name
+          %td= student.middle_name
+          %td= student.university.name
+          %td
+            - if student == current_student
+              ООП, SQL, Алгоритмы
+            - else
+              ООП, SQL, Алгоритмы, Bash
+  %br
+  %br
+  %h1 Рекомендации к изучению
+  Пройдите курс 'Работа в командной строке Bash' на Skillbox - #{link_to 'https://skillbox.ru/course/bash/', 'https://skillbox.ru/course/bash/'}.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_115410) do
+ActiveRecord::Schema.define(version: 2021_04_17_134710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 2021_04_17_115410) do
     t.index ["name"], name: "index_skills_on_name", unique: true
   end
 
+  create_table "student_skills", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "skill_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["skill_id"], name: "index_student_skills_on_skill_id"
+    t.index ["student_id", "skill_id"], name: "index_student_skills_on_student_id_and_skill_id", unique: true
+    t.index ["student_id"], name: "index_student_skills_on_student_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -75,5 +86,7 @@ ActiveRecord::Schema.define(version: 2021_04_17_115410) do
   end
 
   add_foreign_key "interships", "companies"
+  add_foreign_key "student_skills", "skills"
+  add_foreign_key "student_skills", "students"
   add_foreign_key "students", "universities"
 end
