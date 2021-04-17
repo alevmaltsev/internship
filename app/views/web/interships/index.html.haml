@@ -1,0 +1,31 @@
+%main.container
+  .internship-filters
+    %button.btn.btn-secondary
+      %span Бэкенд-разработка
+      = image_tag 'svg/plus.svg'
+    %button.btn.btn-secondary
+      %span Москва
+      = image_tag 'svg/plus.svg'
+
+  .internship-wrrapper
+    - @interships.each do |intership|
+      .internship-card
+        .internship-card_header
+          %h3.title= intership.company.name
+          %span.badge.badge-success Оплачиваемая
+        .row-label-value
+          .label Специальность
+          .value Бэкенд-разработка
+        .row-label-value
+          .label Дата старта
+          .value= l intership.start_at, format: :only_date
+        .row-label-value
+          .label Длительнось
+          .value= intership.duration
+        .row-label-value
+          .label Занятость
+          .value= intership.busyness
+        %button.btn.btn-primary
+          Подать заявку
+        %button.btn.btn-outline-primary
+          Подробнее

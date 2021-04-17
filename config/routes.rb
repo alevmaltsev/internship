@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   scope module: :web do
-    root to: 'welcome#index'
+    root to: 'interships#index'
 
     get '/elements', to: 'element#index'
+    resources :interships, only: [:index, :show]
 
     namespace :admin do
       root to: 'students#index'
