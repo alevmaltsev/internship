@@ -7,5 +7,26 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application'
   %body
+    %header.header
+      = link_to '/', class: 'logo navbar-brand' do
+        = image_tag 'svg/logo.svg', alt: 'Стажировочка'
+      %nav.navbar.navbar-light.navbar-expand-lg.navbar-light
+        %button.navbar-toggler.align-self-start{"aria-controls" => "navbarToggleExternalContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarToggleExternalContent", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        %ul.navbar-nav.navbar-collapse.d-lg-block#navbarToggleExternalContent.collapse
+          %li.nav-item
+            =link_to 'Стажировки', '/', class: 'nav-link'
+          %li.nav-item
+            =link_to 'Компании', '/', class: 'nav-link'
+          %li.nav-item.icon
+            =link_to '/' do
+              = image_tag 'svg/ring.svg', alt: 'Стажировочка'
+          - if student_signed_in?
+            %li.nav-item
+              = link_to 'Профиль', student_root_path, class: 'nav-link'
+          - else
+            %li.nav-item.icon
+              = link_to new_student_session_path, title: 'Вход в личный кабинет' do
+                = image_tag 'svg/person.svg', alt: 'Стажировочка'
     = yield
     = javascript_pack_tag 'application'

@@ -1,0 +1,6 @@
+.container
+  %h1 Вход в личный кабинет студента
+  = simple_form_for :student, url: student_session_path do |f|
+    = f.input :email
+    = f.input :password
+    = f.button :submit, "Войти", class: "btn btn-info"

@@ -1,0 +1,10 @@
+.container
+  %h1 Профиль студента
+  = simple_form_for @student, url: student_profile_path do |f|
+    = f.association :university, collection: University.order(:name)
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :middle_name
+    = f.input :email
+    = f.input :password
+    = f.button :submit, class: "btn btn-info"

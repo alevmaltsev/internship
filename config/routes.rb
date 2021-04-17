@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
     namespace :student do
       root to: 'profiles#edit'
+
       resource :profile, only: [:edit, :update]
+      resource :session, only: [:new, :create, :destroy]
     end
   end
 end
