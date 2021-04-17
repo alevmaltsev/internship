@@ -11,5 +11,10 @@ Rails.application.routes.draw do
       resources :companies, only: [:index, :new, :create, :edit, :update, :destroy]
       resources :universities, only: [:index, :new, :create, :edit, :update, :destroy]
     end
+
+    namespace :student do
+      root to: 'profiles#edit'
+      resource :profile, only: [:edit, :update]
+    end
   end
 end
