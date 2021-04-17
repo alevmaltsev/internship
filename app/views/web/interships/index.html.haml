@@ -15,7 +15,7 @@
           %span.badge.badge-success Оплачиваемая
         .row-label-value
           .label Специальность
-          .value Бэкенд-разработка
+          .value= intership&.company_specialty&.name
         .row-label-value
           .label Дата старта
           .value= l intership.start_at, format: :only_date

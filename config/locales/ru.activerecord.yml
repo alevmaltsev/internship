@@ -53,3 +53,5 @@ ru:
       skill:
         training_url: Адрес прохождения обучения
         test_url: Адрес прохождения тестирования
+      company/specialty:
+        company: Компания
