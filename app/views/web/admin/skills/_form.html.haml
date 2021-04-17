@@ -1,6 +1,8 @@
 = simple_form_for [:admin, @skill], html: { class: 'form-horizontal' } do |f|
   %legend= legend
   = f.input :name
+  = f.input :training_url
+  = f.input :test_url
   .form-actions
     = f.submit class: "btn btn-primary"
     = link_to t(:cancel), [:admin, :skills], class: "btn"

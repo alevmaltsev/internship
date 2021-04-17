@@ -5,12 +5,16 @@
     %tr
       %th #
       %th Название
+      %th Адрес прохождения обучения
+      %th Адрес прохождения тестирования
       %th
   %tbody
     - @skills.each do |skill|
       %tr
         %td= skill.id
         %td= skill.name
+        %td= skill.training_url
+        %td= skill.test_url
         %td
           = link_to [:edit, :admin, skill], class: 'btn btn-warning', title: t(:edit) do
             = fa_icon "edit"
