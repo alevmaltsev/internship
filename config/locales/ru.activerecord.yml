@@ -41,8 +41,8 @@ ru:
     attributes:
       student:
         university: Университет
-        last_name: Имя
-        first_name: Фамилия
+        first_name: Имя
+        last_name: Фамилия
         middle_name: Отчество
       intership:
         company: Компания
