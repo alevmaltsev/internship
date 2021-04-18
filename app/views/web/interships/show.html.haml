@@ -1,7 +1,7 @@
 %main.container
   .internship-header
     %h1= @intership.name
-    %span.company= @intership&.company.name
+    %span.company= @intership&.company&.name
   .internship-info-tags
     %ul
       - [@intership&.company_specialty.name, @intership.payment, @intership.work_format].each do |tag|
