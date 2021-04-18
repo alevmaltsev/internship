@@ -13,11 +13,47 @@
       .name
         = @student.first_name + ' ' + @student.last_name
       .description
-        = @student.university.name
-      = link_to edit_student_profile_path, class: 'edit-link' do 
-        %span Скилл-сет
-        %span
-          =image_tag 'svg/link_arrow.svg'
+        20.05.2000
+      .row-labels__inline
+        - [{key: 'Номер телефона', value:'+7 (987) 987-43-21'},{key: 'Электронная почта', value:'konstanta@gmail.com'},{key: 'Учебное учреждение', value:'МГТУ им. Н. Э. Баумана'},{key: 'Специальность', value:'Информатика'}, {key: 'Курс',value: '1'}].each do |parameter|
+          .row-label-value
+            .label
+              = parameter[:key]
+            .value.nowrap
+              = parameter[:value]
+
+  %section
+    .profile-skill-container
+      .profile-skill-box
+        .skill-box-header
+          %h2 Скил-сет
+          =link_to 'Добавить ещё', '/'
+        .skill-wrapper
+          - ['Linux', 'Git', 'Computer Science'].each do |skill|
+            .skill-tag
+              %span= skill
+              %span
+                %svg{fill: "none", height: "16", viewbox: "0 0 16 16", width: "16", xmlns: "http://www.w3.org/2000/svg"}
+                  %path{"clip-rule" => "evenodd", d: "M6.93964 8.00055L2.84814 12.0921L3.9088 13.1527L8.0003 9.06121L12.0918 13.1527L13.1525 12.0921L9.06096 8.00055L13.1524 3.90905L12.0918 2.84839L8.0003 6.93989L3.90882 2.84839L2.84816 3.90905L6.93964 8.00055Z", fill: "white", "fill-rule" => "evenodd"}
+          - ['ООП', 'Паттерны проектирования', 'SQL', 'JavaScript', 'Ruby', 'Docker', 'Nginx', 'Elixir', 'Css', 'Html', 'WebComponents', 'WebAssembley'].each do |skill|
+            .skill-tag.unapproved
+              %span= skill
+              %span
+                %svg{fill: "none", height: "16", viewbox: "0 0 16 16", width: "16", xmlns: "http://www.w3.org/2000/svg"}
+                  %path{"clip-rule" => "evenodd", d: "M6.93964 8.00055L2.84814 12.0921L3.9088 13.1527L8.0003 9.06121L12.0918 13.1527L13.1525 12.0921L9.06096 8.00055L13.1524 3.90905L12.0918 2.84839L8.0003 6.93989L3.90882 2.84839L2.84816 3.90905L6.93964 8.00055Z", fill: "white", "fill-rule" => "evenodd"}
+        .btn.btn-outline-primary Показать все
+
+      .profile-skill-box
+        %h2 Проверка навыков
+        .skill-checking
+          - ['Php', 'Css', 'Js', 'Linux'].each do |skill|
+            .skill-holder
+              .skill-name
+                = skill
+              =link_to 'Начать', '/'
+        .btn.btn-outline-primary.btn-block Показать все
+
+
   %section
     %h2
       Подходящие вакансии

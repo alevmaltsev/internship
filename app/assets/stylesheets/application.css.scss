@@ -346,6 +346,7 @@ section {
 
 .skill-wrapper {
   display: flex;
+  flex-wrap: wrap;
 
   .skill-tag {
     background-color: $primary;
@@ -353,9 +354,17 @@ section {
     line-height: 20px;
     color: #FFFFFF;
     padding: 6px 12px;
-
-    & + .skill-tag {
-      margin-left: 8px;
+    margin-bottom: 12px;
+    margin-right: 8px;
+    &.unapproved {
+      color: #000;
+      background-color: #F4F4F5;
+      path {
+        fill: #797E8B;
+      }
+    }
+    path {
+      fill: #fff;
     }
   }
 }
@@ -402,4 +411,44 @@ section {
   position: fixed;
   bottom: 40px;
   right: 40px;
+}
+
+.profile-skill-container {
+  display: flex;
+  margin-top: 22px;
+}
+
+.profile-skill-box {
+  background-color: #fff;
+  padding: 24px;
+  width: 100%;
+  h2 {
+    margin-top: 0;
+  }
+
+  & + .profile-skill-box {
+    max-width: 296px;
+    margin-left: 16px;
+  }
+}
+
+.skill-holder {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 24px;
+
+  & + .skill-holder {
+    margin-top: 16px; 
+  }
+}
+
+.skill-checking {
+  margin-bottom: 32px;
+}
+
+.skill-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
