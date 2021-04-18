@@ -4,7 +4,7 @@
     %span.company= @intership&.company&.name
   .internship-info-tags
     %ul
-      - [@intership&.company_specialty.name, @intership.payment, @intership.work_format].each do |tag|
+      - [@intership&.company_specialty&.name, @intership.payment, @intership.work_format].each do |tag|
         %li= tag
   .row-labels__inline
     - [{key: 'Занятость', value: @intership.busyness}, {key: 'Старт', value: @intership&.start_at&.to_date }, {key:'Осталось мест', value: "#{@intership.student_amount}/#{@intership.student_amount}"} ].each do |parameter|
