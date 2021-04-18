@@ -29,6 +29,7 @@
           %h2 Скил-сет
           =link_to 'Добавить ещё', '/'
         .skill-wrapper
+          
           - ['Linux', 'Git', 'Computer Science'].each do |skill|
             .skill-tag
               %span= skill
@@ -58,34 +59,37 @@
     %h2
       Подходящие вакансии
     .internship-wrrapper
-      .internship-card.internship-card__compact
-        .title
-          QA в Simbirsoft
-        .row-labels
-          .row-label-value
-            .label Длительнось
-            .value 3–4 месяца
-          .row-label-value
-            .label Осталось мест
-            .value 3/4
-          .row-label-value
-            .label Старт
-            .value 15мая
+      - Intership.all.each do |intership|
+        .internship-card.internship-card__compact
+          .title
+            = intership.name
+          .row-labels
+            .row-label-value
+              .label Длительнось
+              .value= intership.duration
+            .row-label-value
+              .label Осталось мест
+              .value= "#{intership.student_amount}/#{intership.student_amount}"
+            .row-label-value
+              .label Старт
+              .value= intership.start_at.to_date
   %section
     %h2
       Могут подойти, если подучиться
+    
     .internship-wrrapper
-      .internship-card.internship-card__compact
-        .title
-          QA в Simbirsoft
-        .row-labels
-          .row-label-value
-            .label Длительнось
-            .value 3–4 месяца
-          .row-label-value
-            .label Осталось мест
-            .value 3/4
-          .row-label-value
-            .label Старт
-            .value 15мая
+      - Intership.all.each do |intership|
+        .internship-card.internship-card__compact
+          .title
+            = intership.name
+          .row-labels
+            .row-label-value
+              .label Длительнось
+              .value= intership.duration
+            .row-label-value
+              .label Осталось мест
+              .value= "#{intership.student_amount}/#{intership.student_amount}"
+            .row-label-value
+              .label Старт
+              .value= intership.start_at.to_date
     
