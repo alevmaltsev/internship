@@ -50,6 +50,9 @@ ru:
         start_at: Дата начала
         duration: Продолжительность
         busyness: Занятость
+        payment: Оплата
+        work_format: Формат работы
+        student_amount: Количество студентов
       skill:
         training_url: Адрес прохождения обучения
         test_url: Адрес прохождения тестирования

@@ -1,31 +1,55 @@
 %main.container
-  %h1= @intership.company.name
-  %h2= @intership.name
-  %h2= @intership.description
+  .internship-header
+    %h1= @intership.name
+    %span.company= @intership.company.name
+  .internship-info-tags
+    %ul
+      - [@intership.company_specialty.name, @intership.payment, @intership.work_format].each do |tag|
+        %li= tag
+  .row-labels__inline
+    - [{key: 'Занятость', value: @intership.busyness}, {key: 'Старт', value: @intership.start_at.to_date }, {key:'Осталось мест', value: "#{@intership.student_amount}/#{@intership.student_amount}"} ].each do |parameter|
+      .row-label-value
+        .label= parameter[:key]
+        .value.nowrap= parameter[:value]
+  .skill-set-box
+    %h2 Необходимые скилы для стажировки
+    .skill-wrapper
+      .skill-tag
+        ООП
+      .skill-tag
+        React
+    %h2 Скилы после стажировки
+    .skill-wrapper
+      .skill-tag
+        ООП
+      .skill-tag
+        Патерны проектирования
+      .skill-tag
+        React
+  %h2 Дополнительное обучение от партнеров
+  .course-wrapper
+    =link_to '/', class: 'preview-course' do
+      .texts
+        .title
+          Курс
+        .description
+          Python-разработчик
+      =image_tag 'python.png', class: 'course-image'
+    =link_to '/', class: 'preview-course' do
+      .texts
+        .title
+          Курс
+        .description
+          Python-разработчик
+      =image_tag 'python.png', class: 'course-image'
 
-  %br
-  %br
-  %h1 Список студентов, записанных на стажировку
-  %table.table
-    %thead
-      %th Имя
-      %th Фамилия
-      %th Отчество
-      %th Университет
-      %th Скиллы
-    %tbody
-      - Student.find_each do |student|
-        %tr{class: ('table-success' if current_student == student)}
-          %td= student.first_name
-          %td= student.last_name
-          %td= student.middle_name
-          %td= student.university.name
-          %td
-            - if student == current_student
-              ООП, SQL, Алгоритмы
-            - else
-              ООП, SQL, Алгоритмы, Bash
-  %br
-  %br
-  %h1 Рекомендации к изучению
-  Пройдите курс 'Работа в командной строке Bash' на Skillbox - #{link_to 'https://skillbox.ru/course/bash/', 'https://skillbox.ru/course/bash/'}.
+
+.btn.btn-primary.sticky-corner
+  Подать заявку
+
+
+
+  
+
+  -# %h1 Рекомендации к изучению
+  -# Пройдите курс 'Работа в командной строке Bash' на Skillbox - #{link_to 'https://skillbox.ru/course/bash/', 'https://skillbox.ru/course/bash/'}.

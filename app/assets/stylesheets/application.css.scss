@@ -149,29 +149,6 @@ h3 {
     line-height: 34px;
   }
 
-  .row-label-value {
-    display: flex;
-    flex-direction: column;
-    &:last-of-type {
-      margin-bottom: 20px;
-    }
-    & + .row-label-value {
-      margin-top: 16px;
-    }
-    .label {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 22px;
-      color: #828282;
-    }
-    .value {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 28px;
-      color: #000;
-    }
-  }
-
   .btn {
     & + .btn {
       margin-left: 12px;
@@ -184,16 +161,55 @@ h3 {
       line-height: 28px;
       margin-bottom: 12px;
     }
-    .row-labels {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      .row-label-value {
-        margin: 0;
-        width: 33%;
+  }
+}
+.row-label-value {
+  display: flex;
+  flex-direction: column;
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+  & + .row-label-value {
+    margin-top: 16px;
+  }
+  .label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #828282;
+  }
+  .value {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #000;
+  }
+}
+
+.row-labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .row-label-value {
+    margin: 0;
+    width: 33%;
+  }
+  &__inline {
+    display: inline-flex;
+    .row-label-value {
+      margin: 0;
+      width: 33%;
+    }
+    .row-label-value {
+      & + .row-label-value {
+        margin-left: 48px;
       }
     }
   }
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .breadcrumbs {
@@ -280,4 +296,110 @@ section {
     }
   }
 
+}
+
+
+.internship-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    color: #101828;
+  }
+  .company {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: #272F3D;
+  }
+}
+
+.internship-info-tags {
+  margin-bottom: 24px;
+  ul {
+    display: flex;
+    padding: 0;
+    color: $primary;
+    font-size: 16px;
+    line-height: 24px;
+
+    li{
+      &:first-child {
+        list-style: none;
+      }
+      & + li {
+        margin-left: 25px;
+      }
+    }
+  }
+}
+
+.skill-set-box {
+   margin: 10px 0 40px;
+   h2 {
+     margin: 30px 0 16px;
+   }
+}
+
+.skill-wrapper {
+  display: flex;
+
+  .skill-tag {
+    background-color: $primary;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 6px 12px;
+
+    & + .skill-tag {
+      margin-left: 8px;
+    }
+  }
+}
+
+
+.course-wrapper {
+  display: flex;
+  justify-content: space-between;
+  & > .preview-course {
+    width: calc(100% / 2 - 16px);
+  }
+}
+
+.preview-course {
+  border: 1px solid #101828;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .course-image {
+    max-width: 120px;
+  }
+}
+
+.sticky-corner {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
 }

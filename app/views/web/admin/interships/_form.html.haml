@@ -6,7 +6,8 @@
   = f.input :description
   = f.input :start_at
   = f.input :duration
-  = f.input :busyness, collection: ['Оплачиваемая', 'Неоплачиваемая']
+  = f.input :busyness
+  = f.input :payment, collection: ['Оплачиваемая', 'Неоплачиваемая']
   = f.input :work_format, collection: ['В офисе', 'Можно удаленно']
   = f.input :student_amount, input_html: {type: 'number'}
   .form-actions
