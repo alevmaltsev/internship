@@ -1,13 +1,13 @@
 %main.container
   .internship-header
     %h1= @intership.name
-    %span.company= @intership.company.name
+    %span.company= @intership&.company.name
   .internship-info-tags
     %ul
-      - [@intership.company_specialty.name, @intership.payment, @intership.work_format].each do |tag|
+      - [@intership&.company_specialty.name, @intership.payment, @intership.work_format].each do |tag|
         %li= tag
   .row-labels__inline
-    - [{key: 'Занятость', value: @intership.busyness}, {key: 'Старт', value: @intership.start_at.to_date }, {key:'Осталось мест', value: "#{@intership.student_amount}/#{@intership.student_amount}"} ].each do |parameter|
+    - [{key: 'Занятость', value: @intership.busyness}, {key: 'Старт', value: @intership&.start_at&.to_date }, {key:'Осталось мест', value: "#{@intership.student_amount}/#{@intership.student_amount}"} ].each do |parameter|
       .row-label-value
         .label= parameter[:key]
         .value.nowrap= parameter[:value]
@@ -49,7 +49,7 @@
 
 
 
-  
+
 
   -# %h1 Рекомендации к изучению
   -# Пройдите курс 'Работа в командной строке Bash' на Skillbox - #{link_to 'https://skillbox.ru/course/bash/', 'https://skillbox.ru/course/bash/'}.
