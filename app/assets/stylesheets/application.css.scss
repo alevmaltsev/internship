@@ -128,12 +128,13 @@ h3 {
 
 .internship-wrrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .internship-card {
-  max-width: calc((100% - 2 * 16px) / 3);
+  max-width: calc((100% - 3 * 16px) / 3);
   width: 100%;
+  margin: 0 8px;
   padding: 24px;
   background-color: #fff;
 
